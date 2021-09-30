@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="100">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        #nav {
+            width: 360px;
+            height: 30px;
+            margin: 400px auto;
+        }
+        
+        #nav ul {
+            width: 420px;
+            height: 30px;
+        }
+        
+        #nav ul li {
+            float: left;
+            width: 70px;
+            height: 30px;
+            border-right: 1px solid #fff;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            transition: all 0.5s;
+        }
+        
+        #nav ul li:nth-child(6) {
+            border-right: 0px;
+        }
+        
+        #nav ul li:hover {
+            animation: kuosan 1s ease-out;
+            animation-fill-mode: forwards;
+        }
+        
+        @keyframes kuosan {
+            from {
+                background-image: radial-gradient(#fff 25%, #ccc 20%, #000 55%);
+                color: #fff;
+            }
+            to {
+                background-image: radial-gradient(#fff 30%, #ccc 35%, #000 80%);
+                color: #000;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <ul>
+            <li>扩散</li>
+            <li>扩散</li>
+            <li>扩散</li>
+            <li>扩散</li>
+            <li>扩散</li>
+            <li>扩散</li>
+        </ul>
+    </div>
+</body>
+
+</html>

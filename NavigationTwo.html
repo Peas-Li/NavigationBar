@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        #nav {
+            width: 360px;
+            height: 30px;
+            margin: 400px auto;
+        }
+        
+        #nav ul {
+            width: 420px;
+            height: 30px;
+        }
+        
+        #nav ul li {
+            float: left;
+            width: 70px;
+            height: 30px;
+            border-right: 1px solid #fff;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        
+        #nav ul li:nth-child(6) {
+            border-right: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <ul>
+            <li>追踪</li>
+            <li>追踪</li>
+            <li>追踪</li>
+            <li>追踪</li>
+            <li>追踪</li>
+            <li>追踪</li>
+        </ul>
+    </div>
+    <script>
+        nav.onmousemove = function() {
+            var x = event.clientX - this.offsetLeft;
+            var geshu = x / 70;
+            var li = this.querySelectorAll('li');
+            for (var i = 0; i < geshu; i++) {
+                li[i].style.backgroundColor = "#ccc";
+                li[i].style.color = "#000";
+
+            }
+            for (var j = geshu; j < li.length; j++) {
+                li[i].style.backgroundColor = "#000";
+                li[i].style.color = "#fff";
+            }
+        }
+        nav.onmouseleave = function() {
+            var li = this.querySelectorAll('li');
+            for (var i = 0; i < li.length; i++) {
+                li[i].style.backgroundColor = "#000";
+                li[i].style.color = "#fff";
+            }
+        }
+    </script>
+</body>
+
+</html>
