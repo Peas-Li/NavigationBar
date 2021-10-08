@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        #nav {
+            width: 425px;
+            height: 30px;
+            margin: 400px auto;
+        }
+        
+        #nav ul {
+            position: relative;
+            width: 425px;
+            height: 30px;
+        }
+        
+        #nav ul li {
+            float: left;
+            width: 70px;
+            height: 30px;
+            border-right: 1px solid #fff;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+        }
+        
+        #nav ul li:nth-child(6) {
+            border-right: 0px;
+        }
+        
+        #nav ul li>a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: #fff;
+        }
+        
+        #nav ul li .secondary {
+            display: none;
+            width: 425px;
+        }
+        
+        #nav ul li .secondary ul {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 425px;
+            transition: all 0.2s;
+        }
+        
+        #nav ul li .secondary ul li {
+            width: 100px;
+            height: 30px;
+            float: left;
+            border: 0;
+            background-color: #ccc;
+        }
+        
+        #nav ul li .secondary ul li a {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <ul class="main">
+            <li><a href="#" class="btn">下拉</a>
+                <div class="secondary">
+                    <ul>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#" class="btn">下拉</a>
+                <div class="secondary">
+                    <ul>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#" class="btn">下拉</a>
+                <div class="secondary">
+                    <ul>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#" class="btn">下拉</a>
+                <div class="secondary">
+                    <ul>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#" class="btn">下拉</a>
+                <div class="secondary">
+                    <ul>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#" class="btn">下拉</a>
+                <div class="secondary">
+                    <ul>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                        <li><a href="#">次要</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var btn = document.querySelector("ul");
+        for (var i = 0; i < btn.children.length; i++) {
+            btn.children[i].onmouseover = function() {
+                var sec = this.querySelector(".secondary");
+                sec.style.display = "block";
+                var secWidth = sec.offsetWidth;
+                var li = sec.querySelectorAll("li");
+                for (let j = 0; j < li.length; j++) {
+                    li[j].style.width = secWidth / li.length + 'px';
+                }
+                var ul = sec.querySelector("ul");
+                ul.style.top = 30 + "px";
+            }
+            btn.children[i].onmouseleave = function() {
+                var sec = this.querySelector(".secondary");
+                var ul = sec.querySelector("ul");
+                ul.style.top = 0 + "px";
+                sec.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
